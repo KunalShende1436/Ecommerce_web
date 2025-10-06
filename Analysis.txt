@@ -1,0 +1,23 @@
+PROJECT TITLE: E-Commerce Website (ShopEase)
+SUBJECT: Open-Source Tools for Project Development
+
+TEAM MEMBERS:
+1. Project Manager: Kunal Shende
+2. UI/UX Developer:Pratik Kothare
+3. Frontend Developer: Kunal Shende
+4. Backend Developer: Pratik Kothare
+5. Tester: Kunal Shende
+
+PROJECT DESCRIPTION:
+This project demonstrates collaborative development using GitHub workflow. The team created a responsive e-commerce website using HTML, CSS, and JavaScript. The website features Home, Products, Cart, and Contact pages.
+
+WORKFLOW SUMMARY:
+- Created GitHub repository.
+- Project skeleton pushed to main branch.
+- Each member created feature branches (home-page, product-page, cart-page, contact-page, uiux-assets).
+- Multiple commits were made from both members showing collaboration.
+- Pull requests reviewed and merged into main.
+- Final project deployed using GitHub Pages.
+
+TOOLS USED:
+- Git, GitHub, VS Code, HTML, CSS, JavaScript, GitHub Pages
