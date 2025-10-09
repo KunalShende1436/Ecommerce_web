@@ -1,29 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | My E-Commerce Store</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Modern E-Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>🛒 My E-Commerce Store</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">E-Store</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h2>Welcome to Our Store</h2>
-    <p>Find the best products at unbeatable prices!</p>
-    <a href="products.html" class="btn">Shop Now</a>
-  </section>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Discover the Future of Shopping.</h1>
+                <p class="tagline">Curated selection, timeless quality, unbeatable prices.</p>
+                <a href="products.html" class="btn btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
 
-  <footer>
-    <p>© 2025 My Store</p>
-  </footer>
+        <section class="featured-products section-padding">
+            <div class="container">
+                <h2 class="section-title">✨ Featured Products</h2>
+                <div class="product-grid carousel-container">
+                    <div class="product-card card">
+                        <img src="https://picsum.photos/id/1015/300/200" alt="Camera Product">
+                        <h3 class="product-name">Pro Camera Kit</h3>
+                        <p class="product-price">$999.99</p>
+                        <button class="btn btn-secondary add-to-cart" data-id="1">Add to Cart</button>
+                    </div>
+                    <div class="product-card card">
+                        <img src="https://picsum.photos/id/243/300/200" alt="Coffee Mug">
+                        <h3 class="product-name">Minimalist Mug</h3>
+                        <p class="product-price">$19.99</p>
+                        <button class="btn btn-secondary add-to-cart" data-id="2">Add to Cart</button>
+                    </div>
+                    <div class="product-card card">
+                        <img src="https://picsum.photos/id/23/300/200" alt="Plant Decoration">
+                        <h3 class="product-name">Desk Plant Decor</h3>
+                        <p class="product-price">$49.99</p>
+                        <button class="btn btn-secondary add-to-cart" data-id="3">Add to Cart</button>
+                    </div>
+                    <div class="product-card card">
+                        <img src="https://picsum.photos/id/25/300/200" alt="Notebook">
+                        <h3 class="product-name">Premium Notebook</h3>
+                        <p class="product-price">$25.00</p>
+                        <button class="btn btn-secondary add-to-cart" data-id="4">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-offers section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">🔥 Best Offers Today</h2>
+                <div class="offers-grid">
+                    <div class="offer-card card offer-large">
+                        <h3>50% Off Select Accessories</h3>
+                        <p>Limited time only. Don't miss out on amazing deals!</p>
+                        <a href="products.html?category=accessories" class="btn btn-primary-outline">See Deals</a>
+                    </div>
+                    <div class="offer-card card offer-small">
+                        <h3>Free Shipping Over $100</h3>
+                        <p>Automatically applied at checkout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Modern E-Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
 </body>
 </html>
