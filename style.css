@@ -580,6 +580,32 @@ h1, h2, h3 {
     }
 }
 
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* 👈 smooth open/close animation */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
 @media (max-width: 576px) {
     .product-grid {
         /* 1 column on mobile */
