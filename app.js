@@ -1,47 +1,58 @@
-// Product Data
-const products = [
-  { id: 1, name: "Headphones", price: 1200, img: "images/product1.jpg" },
-  { id: 2, name: "Smart Watch", price: 2500, img: "images/product2.jpg" },
-  { id: 3, name: "Shoes", price: 1800, img: "images/product3.jpg" },
-  { id: 4, name: "T-Shirt", price: 800, img: "images/product4.jpg" }
-];
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Global Variables ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+    const toast = document.getElementById('toast');
+    
+    // Simple state management (cart count is no longer displayed, but we keep the logic to simulate adding an item)
+    let cartItemCount = 0; 
+    
+    // --- Mobile Menu Toggle ---
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
 
-// Load products on products.html
-if (document.getElementById("product-list")) {
-  const container = document.getElementById("product-list");
-  products.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "product";
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>₹${p.price}</p>
-      <button onclick="addToCart(${p.id})">Add to Cart</button>
-    `;
-    container.appendChild(card);
-  });
-}
+    // --- Toast Notification Logic ---
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        
+        // Hide the toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
 
-// Add to cart
-function addToCart(id) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const item = products.find(p => p.id === id);
-  cart.push(item);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart!");
-}
+    // --- Add to Cart Handler ---
+    cartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Get product name from the card (adjust selector if HTML changes)
+            const productCard = e.target.closest('.product-card');
+            const productName = productCard ? productCard.querySelector('.product-name').textContent : 'Item';
+            
+            // 1. Update Cart Count (Internal for simulation)
+            cartItemCount++;
 
-// Display cart items
-if (document.getElementById("cart-items")) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const container = document.getElementById("cart-items");
-  let total = 0;
-  cart.forEach(p => {
-    const div = document.createElement("div");
-    div.className = "product";
-    div.innerHTML = `<h3>${p.name}</h3><p>₹${p.price}</p>`;
-    container.appendChild(div);
-    total += p.price;
-  });
-  document.getElementById("cart-total").textContent = total;
-}
+            // 2. Show Notification
+            showToast(`${productName} added to cart! 🛒`);
+            
+            // *In a real app, you would also:
+            // * - Send an AJAX request to the server or
+            // * - Update a complex local storage cart object
+        });
+    });
+
+    // --- Simple Form Submission Handling (for contact.html) ---
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, here you would submit data via fetch/AJAX
+            showToast('Message sent successfully! We will be in touch soon.');
+            contactForm.reset();
+        });
+    }
+});
