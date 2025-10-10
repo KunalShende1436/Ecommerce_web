@@ -9,9 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartItemCount = 0; 
     
     // --- Mobile Menu Toggle ---
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-    });
+    // Mobile menu toggle
+const menuIcon = document.querySelector('.menu-icon');
+const navLinks = document.querySelector('.nav-links');
+
+menuIcon.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
 
     // --- Toast Notification Logic ---
     function showToast(message) {
